@@ -1,24 +1,117 @@
 @import "tailwindcss";
 
+/* Corporate Font Theme */
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans), Inter, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), "Courier New", monospace;
 }
 
+/* Color Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f7fa;  /* Light gray background for a modern look */
+  --foreground: #1f2937;  /* Dark gray text for better readability */
+  --primary: #004085;     /* Deep blue for brand identity */
+  --primary-light: #1e5db5; /* Lighter blue for hover effects */
+  --secondary: #6c757d;   /* Neutral gray for subtle UI elements */
+  --accent: #ffcd38;      /* Warm accent color for highlights */
+  --error: #d9534f;       /* Standard red for error messages */
+  --border-color: #d1d5db; /* Soft border color */
 }
 
+/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #121826;
+    --foreground: #e5e7eb;
+    --primary: #90caf9; /* Lighter blue for better contrast */
+    --primary-light: #64b5f6;
+    --secondary: #adb5bd;
+    --accent: #ffeb3b;
+    --border-color: #2c3e50;
   }
 }
 
+/* Global Styles */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--primary-light);
+}
+
+button:disabled {
+  background-color: var(--secondary);
+  cursor: not-allowed;
+}
+
+/* Forms */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+  background: white;
+  color: var(--foreground);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(0, 64, 133, 0.2);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
