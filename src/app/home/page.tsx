@@ -1,4 +1,5 @@
-"use client"; 
+"use client";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -25,25 +26,24 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen p-6 bg-gray-100">
-      {/* Navigation */}
-      <nav className="flex justify-around items-center p-4 bg-white shadow rounded-lg mb-6">
-        <Link href="/dashboard" className="text-blue-600 font-bold">Dashboard</Link>
-        <Link href="/savings" className="text-green-600 font-bold">Savings</Link>
-        <Link href="/income" className="text-purple-600 font-bold">Income</Link>
-        <Link href="/expense" className="text-red-600 font-bold">Expense</Link>
-        <Link href="/debt-loan" className="text-yellow-600 font-bold">Debt & Loan</Link>
-        <Link href="/business-investment" className="text-teal-600 font-bold">Business & Investment</Link>
+    <div>
+      {/* Navigation Bar */}
+      <nav className="bg-white shadow-md p-4 flex justify-between rounded-lg mb-6">
+        <div className="flex gap-6">
+          <Link href="/dashboard" className="text-blue-600 font-bold">Dashboard</Link>
+          <Link href="/savings" className="text-green-600 font-bold">Savings</Link>
+          <Link href="/income" className="text-purple-600 font-bold">Income</Link>
+          <Link href="/expense" className="text-red-600 font-bold">Expense</Link>
+          <Link href="/debt-loan" className="text-yellow-600 font-bold">Debt & Loan</Link>
+          <Link href="/business-investment" className="text-teal-600 font-bold">Business & Investment</Link>
+        </div>
       </nav>
 
       {/* Budget Summary Widget */}
       <div className="bg-white p-6 rounded-lg shadow mb-6">
         <h2 className="text-xl font-semibold mb-2">Budget Summary</h2>
         <div className="w-full bg-gray-200 rounded-full h-4">
-          <div
-            className="bg-blue-500 h-4 rounded-full"
-            style={{ width: `${budgetProgress}%` }}
-          ></div>
+          <div className="bg-blue-500 h-4 rounded-full" style={{ width: `${budgetProgress}%` }}></div>
         </div>
         <p className="mt-2 text-sm text-gray-600">{budgetProgress}% of your monthly budget used</p>
       </div>
