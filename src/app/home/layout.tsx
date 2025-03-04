@@ -7,11 +7,15 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       {/* Navigation Bar */}
-      <nav className="bg-gray-600 text-white py-4 px-6 flex justify-between">
-        <h1 className="text-lg font-bold">Akawo</h1>
-        <div className="flex gap-4">
-          <Link href="/dashboard" className="hover:underline">Dashboard</Link>
-          <Link href="/savings" className="hover:underline">Savings</Link>
+      <nav className="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <h1 className="text-lg font-bold text-blue-600">Akawo</h1>
+        <div className="flex gap-6">
+          <Link href="/dashboard" className="text-gray-700 hover:text-blue-500">Dashboard</Link>
+          <Link href="/savings" className="text-gray-700 hover:text-green-500">Savings</Link>
+          <Link href="/income" className="text-gray-700 hover:text-purple-500">Income</Link>
+          <Link href="/expense" className="text-gray-700 hover:text-red-500">Expense</Link>
+          <Link href="/debt-loan" className="text-gray-700 hover:text-yellow-500">Debt & Loan</Link>
+          <Link href="/business-investment" className="text-gray-700 hover:text-teal-500">Business & Investment</Link>
         </div>
       </nav>
 
