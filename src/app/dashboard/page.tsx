@@ -40,7 +40,7 @@ export default function DashboardPage() {
         <div className="flex gap-4">
           <Link href="/home">
             <button className="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
-              <FiHome className="mr-2" /> Go to Home
+              <FiHome className="mr-2" /> Home
             </button>
           </Link>
           <button className="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center">
